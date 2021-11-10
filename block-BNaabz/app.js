@@ -3,9 +3,11 @@ var mongoose = require('mongoose');
 
 //connect to Mongodb
 
-mongoose.connect('mongodb://localhost/sample', (err) => {
-    console.log(err ? err : 'connected true')
-})
+mongoose.connect('mongodb://localhost/sample',
+{useNewUrlParser: true,useUnifiedTopology: true},
+ (err) => {
+    console.log(err ? err : 'connected true');
+});
 
 var app = express();
 
